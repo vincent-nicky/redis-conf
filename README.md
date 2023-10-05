@@ -1,3 +1,5 @@
+# redis.conf
+```
 # Redis configuration file example.
 #
 # Note that in order to read the configuration file, Redis must be
@@ -2294,3 +2296,5 @@ jemalloc-bg-thread yes
 # to suppress
 #
 # ignore-warnings ARM64-COW-BUG
+
+```
