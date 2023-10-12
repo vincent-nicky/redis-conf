@@ -3,9 +3,22 @@
 差别：
 
 ```
-dir /data
+# 如果要外网访问，请注释掉下面，或者修改为0.0.0.0，保险起见，也可以把protected-mode设置为no
+bind 0.0.0.0
+protected-mode no
+
+# 注意这里要把后台运行设置为no，避免docker后台运行冲突
+daemonize no
+
+# 注意修改这里的目录为容器内目录，默认reids进来是在/data/目录
+dir /data/
+
+# 注意修改这里的配置，yes开启持久化，no关闭持久化
 appendonly yes
+
+# 设置密码
 requirepass 123456
+
 ```
 
 完整内容：
@@ -122,7 +135,7 @@ bind 0.0.0.0
 # By default protected mode is enabled. You should disable it only if
 # you are sure you want clients from other hosts to connect to Redis
 # even if no authentication is configured.
-protected-mode yes
+protected-mode no
 
 # Redis uses default hardened security configuration directives to reduce the
 # attack surface on innocent users. Therefore, several sensitive configuration
@@ -320,7 +333,7 @@ tcp-keepalive 300
 # By default Redis does not run as a daemon. Use 'yes' if you need it.
 # Note that Redis will write a pid file in /var/run/redis.pid when daemonized.
 # When Redis is supervised by upstart or systemd, this parameter has no impact.
-daemonize yes
+daemonize no
 
 # If you run Redis from upstart or systemd, Redis can interact with your
 # supervision tree. Options:
@@ -521,7 +534,7 @@ rdb-del-sync-files no
 # The Append Only File will also be created inside this directory.
 #
 # Note that you must specify a directory here, not a file name.
-dir /data
+dir /data/
 
 ################################# REPLICATION #################################
 
