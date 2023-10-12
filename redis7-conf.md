@@ -1,4 +1,5 @@
-# redis.conf
+# redis7 的配置文件（复制后再修改 requirepass）
+
 ```
 # Redis configuration file example.
 #
