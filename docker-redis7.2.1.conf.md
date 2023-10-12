@@ -1,7 +1,15 @@
-# docker-redis7.2.1.conf.md 差别在 `dir /data`，主要是方便挂在数据的目录
+# docker-redis7.2.1.conf.md 
+
+差别：
 
 ```
+dir /data
+appendonly yes
+```
 
+完整内容：
+
+```
 # Redis configuration file example.
 #
 # Note that in order to read the configuration file, Redis must be
@@ -1046,7 +1054,7 @@ acllog-max-len 128
 # The requirepass is not compatible with aclfile option and the ACL LOAD
 # command, these will cause requirepass to be ignored.
 #
-# requirepass password
+requirepass 123456
 
 # New users are initialized with restrictive permissions by default, via the
 # equivalent of this ACL rule 'off resetkeys -@all'. Starting with Redis 6.2, it
@@ -1389,7 +1397,7 @@ disable-thp yes
 #
 # Please check https://redis.io/topics/persistence for more information.
 
-appendonly no
+appendonly yes
 
 # The base name of the append only file.
 #
@@ -2298,6 +2306,5 @@ jemalloc-bg-thread yes
 # to suppress
 #
 # ignore-warnings ARM64-COW-BUG
-
 
 ```
