@@ -5,6 +5,7 @@
 ```
 dir /data
 appendonly yes
+requirepass 123456
 ```
 
 完整内容：
