@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-CREATE DATABASE nacos_config;
+CREATE DATABASE IF NOT EXISTS nacos_config;
 
 USE nacos_config;
 
